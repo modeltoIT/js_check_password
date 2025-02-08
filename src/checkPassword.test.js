@@ -24,7 +24,7 @@ describe(`Function 'checkPassword':`, () => {
   });
 
   it(`should accept\`Aa-Яя\` letters`, () => {
-    expect(checkPassword('ЯP@ssword1я')).toBeFalsy();
+    expect(checkPassword('ЯP@ssword1я')).toBeTruthy();
   });
 
   it(`should be at least 8 chars long`, () => {
@@ -43,15 +43,15 @@ describe(`Function 'checkPassword':`, () => {
     expect(checkPassword('P@ss12ssd f')).toBeFalsy();
   });
 
-  it(`should not contain at least 1 digit`, () => {
+  it(`should contain at least 1 digit`, () => {
     expect(checkPassword('P@ssssdf')).toBeFalsy();
   });
 
-  it(`should not contain at least 1 special character`, () => {
+  it(`should contain at least 1 special character`, () => {
     expect(checkPassword('Pssssdf1')).toBeFalsy();
   });
 
-  it(`should not contain at least 1 uppercase letter`, () => {
+  it(`should contain at least 1 uppercase letter`, () => {
     expect(checkPassword('p@ssssdf1')).toBeFalsy();
   });
 });
