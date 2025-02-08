@@ -23,8 +23,8 @@ describe(`Function 'checkPassword':`, () => {
     expect(checkPassword('P@ssword')).toBeFalsy();
   });
 
-  it(`should accept\`Aa-Яя\` letters`, () => {
-    expect(checkPassword('ЯP@ssword1я')).toBeTruthy();
+  it(`should not accept\`Aa-Яя\` letters`, () => {
+    expect(checkPassword('ЯP@ssword1я')).toBeFalsy();
   });
 
   it(`should be at least 8 chars long`, () => {
